@@ -1,0 +1,19 @@
+<!--
+ - Created by Master on 19.12.2019.
+ -->
+
+<!-- Quick Action Lwc -->
+<template>
+    <div class="slds-text-align--center">
+        <lightning-button label="One more form" onclick={plusNumObj} class="slds-p-around--small"></lightning-button>
+        <lightning-button label="One minus form" onclick={minusNumObj} class="slds-p-around--small"></lightning-button>
+    </div>
+    <ul class="slds-m-around_medium">
+        <template for:each={arraysObj} for:item="arr" for:index="index">
+            <li key={arr.index}>
+                <c-formellwc onchildevent={handleChildEvent} index={arr.index} type={url}></c-formellwc>
+            </li>
+        </template>
+    </ul>
+    <lightning-button label="Send to DB" onclick={callDB} class="slds-p-around--small"></lightning-button>
+</template>
